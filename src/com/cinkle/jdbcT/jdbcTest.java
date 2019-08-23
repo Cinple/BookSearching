@@ -2,10 +2,10 @@ package com.cinkle.jdbcT;
 
 import java.sql.*;
 public class jdbcTest {
-    public static void main(String[] args) throws Exception{
-        Connection con;
-        Statement stmt;
-        ResultSet rs;
+    private Connection con;
+    private Statement stmt;
+    private ResultSet rs;
+    public void init() throws Exception{
         //加载驱动器，下面的代码为加载MySQL驱动器
         Class.forName("com.mysql.cj.jdbc.Driver");
         //注册MySQL驱动器
@@ -16,7 +16,28 @@ public class jdbcTest {
         String password="hoh473726";
         con= DriverManager.getConnection(url,username,password);
         stmt=con.createStatement();
-        rs=stmt.executeQuery("select * from fruits");
+    }
+    public void query(String sql) throws Exception{
+        rs = stmt.executeQuery(sql);
+    }
+    public void close()throws Exception{
+        if(con != null)
+            con.close();
+        if(stmt != null)
+            stmt.close();
+        if(rs != null)
+            rs.close();
+    }
+    public ResultSet getResult(){
+        return rs;
+    }
+    public static void main(String[] args) throws Exception{
+
+        jdbcTest test = new jdbcTest();
+        test.init();
+        String sql = "select * from fruits";
+        test.query(sql);
+        ResultSet rs = test.getResult();
         while(rs.next()){
             String id = rs.getString(1);
             int sid = rs.getInt("s_id");
@@ -24,8 +45,6 @@ public class jdbcTest {
             float price = rs.getFloat(4);
             System.out.println(id +" " + sid + " " + name +" " + price);
         }
-        rs.close();
-        stmt.close();
-        con.close();
+        test.close();
     }
 }
