@@ -1,1 +1,3 @@
-I think it is my first word in the github。
+﻿I think it is my first word in the github。
+
+this is a test that judge git difference.
