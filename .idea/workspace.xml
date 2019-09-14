@@ -2,11 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="842f364a-6a4d-4886-b658-72c79829f3f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/cinkle/jdbcT/LocationAlgrithm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cinkle/jdbcT/jdbcTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cinkle/jdbcT/jdbcTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/META-INF/JavaContain.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/Test/something.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/Test/something.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/httpT/VisitWeb.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/httpT/VisitWeb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/jdbcT/jdbcTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/jdbcT/jdbcTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/BookSearch$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/BookSearch$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/BookSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/BookSearch.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/BookShow$1action.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/BookShow$1action.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/BookShow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/BookShow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/NewHotSortUI$1ActionT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/NewHotSortUI$1ActionT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/NewHotSortUI$1action.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/NewHotSortUI$1action.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/NewHotSortUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/NewHotSortUI.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/Search$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/Search$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/Search.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/Search.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/UIT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/UIT.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cinkle/Test/something.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cinkle/Test/something.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cinkle/httpT/VisitWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cinkle/httpT/VisitWeb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cinkle/swingT/BookSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cinkle/swingT/BookSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cinkle/swingT/BookShow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cinkle/swingT/BookShow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cinkle/swingT/NewHotSortUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cinkle/swingT/NewHotSortUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cinkle/swingT/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cinkle/swingT/Search.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cinkle/swingT/UIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cinkle/swingT/UIT.java" afterDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,154 +33,6 @@
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/cinkle/jdbcT/jdbcTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1269">
-              <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
-              <folding>
-                <element signature="e#976#977#0" expanded="true" />
-                <element signature="e#1000#1001#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/cinkle/httpT/DLimage.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/cinkle/swingT/LabelBean.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="6" column="33" lean-forward="true" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-              <folding>
-                <element signature="method#LabelBean#0;class#LabelBean#0" />
-                <element signature="method#checkBookName#0;class#LabelBean#0" />
-                <element signature="method#checkInfoDetail#0;class#LabelBean#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/cinkle/swingT/UIT.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#mousePressed#0;class#UIT#0" />
-                <element signature="method#mouseReleased#0;class#UIT#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/cinkle/swingT/BookSearch.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="52" column="29" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/cinkle/jdbcT/LocationAlgrithm.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#splitInfoDetail#0;class#LocationAlgrithm#0" />
-                <element signature="method#isTwoZone#0;class#LocationAlgrithm#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/cinkle/swingT/Search.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="27" column="56" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/cinkle/swingT/NewHotSortUI.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3672">
-              <caret line="139" column="52" selection-start-line="139" selection-start-column="52" selection-end-line="139" selection-end-column="52" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#4650#4651#0" expanded="true" />
-                <element signature="e#4723#4724#0" expanded="true" />
-                <element signature="e#4798#4799#0" expanded="true" />
-                <element signature="e#4874#4875#0" expanded="true" />
-                <element signature="method#changeFont#0;class#NewHotSortUI#0" />
-                <element signature="method#addPanel#0;class#NewHotSortUI#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/cinkle/swingT/BookShow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2294#2295#0" expanded="true" />
-                <element signature="e#2367#2368#0" expanded="true" />
-                <element signature="e#2442#2443#0" expanded="true" />
-                <element signature="e#2518#2519#0" expanded="true" />
-                <element signature="method#initial#0;class#BookShow#0" />
-                <element signature="method#getInformation#0;class#BookShow#0" />
-                <element signature="method#getInfo#0;class#BookShow#0" />
-                <element signature="method#getURLstr#0;class#BookShow#0" />
-                <element signature="method#getPageNum#0;class#BookShow#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/cinkle/httpT/VisitWeb.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="110" column="66" lean-forward="true" selection-start-line="110" selection-start-column="66" selection-end-line="110" selection-end-column="66" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#getAllCode#0;class#VisitWeb#0" />
-                <element signature="method#changeUTF8ToURL#0;class#VisitWeb#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -174,90 +44,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/src/com/cinkle/com/cinkle/jvmT/ObjectAlive.java" />
-        <option value="$PROJECT_DIR$/src/com/cinkle/swingT/SwingConsole.java" />
-        <option value="$PROJECT_DIR$/src/com/cinkle/swingT/ButtonT.java" />
-        <option value="$PROJECT_DIR$/src/com/cinkle/swingT/labelT.java" />
-        <option value="$PROJECT_DIR$/src/com/cinkle/httpT/ChineseToURL.java" />
-        <option value="$PROJECT_DIR$/src/com/cinkle/swingT/jlabelT.java" />
-        <option value="$PROJECT_DIR$/src/com/cinkle/swingT/NewBookSortUI.java" />
-        <option value="$PROJECT_DIR$/src/com/cinkle/swingT/UIT.java" />
-        <option value="$PROJECT_DIR$/src/com/cinkle/swingT/BookSearch.java" />
-        <option value="$PROJECT_DIR$/src/com/cinkle/swingT/NewHotSortUI.java" />
-        <option value="$PROJECT_DIR$/src/com/cinkle/swingT/BookShow.java" />
-        <option value="$PROJECT_DIR$/src/com/cinkle/swingT/Search.java" />
-        <option value="$PROJECT_DIR$/src/com/cinkle/httpT/VisitWeb.java" />
-        <option value="$PROJECT_DIR$/src/com/cinkle/Test/something.java" />
-        <option value="$PROJECT_DIR$/src/com/cinkle/httpT/DLimage.java" />
-        <option value="$PROJECT_DIR$/src/com/cinkle/swingT/LabelBean.java" />
-        <option value="$PROJECT_DIR$/src/com/cinkle/jdbcT/LocationAlgrithm.java" />
-        <option value="$PROJECT_DIR$/src/com/cinkle/jdbcT/jdbcTest.java" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="260" />
-    <option name="y" value="25" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
-  </component>
+  <component name="ProjectId" id="1QlVZ4YwAtFp8S50BK0shENxsK8" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="JavaContain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaContain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaContain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaContain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaContain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaContain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cinkle" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaContain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaContain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cinkle" type="462c0819:PsiDirectoryNode" />
-              <item name="httpT" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaContain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaContain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cinkle" type="462c0819:PsiDirectoryNode" />
-              <item name="jdbcT" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JavaContain" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JavaContain" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cinkle" type="462c0819:PsiDirectoryNode" />
-              <item name="swingT" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -376,273 +165,16 @@
       <is-autoscroll-to-source value="true" />
     </todo-panel>
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1065" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14925373" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="UI Designer" order="4" />
-      <window_info id="Capture Tool" order="5" />
-      <window_info id="Favorites" order="6" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" weight="0.32939914" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946696" weight="0.32867885" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.32975295" />
-      <window_info anchor="bottom" id="JProfiler" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49946696" weight="0.32867885" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010661" side_tool="true" weight="0.32939914" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.32939914" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" />
-      <window_info anchor="right" id="Theme Preview" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Palette&#9;" order="7" />
-    </layout>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files (x86)/MySQL/Connector J 8.0/mysql-connector-java-8.0.15.jar!/com/mysql/cj/jdbc/exceptions/SQLError.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="jar://$USER_HOME$/.ideaLibSources/mysql-connector-java-8.0.15-sources.jar!/com/mysql/cj/jdbc/exceptions/SQLError.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="128" column="28" selection-start-line="128" selection-start-column="28" selection-end-line="128" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="549" column="49" selection-start-line="549" selection-start-column="49" selection-end-line="549" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cinkle/com/cinkle/jvmT/ObjectAlive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#163#164#0" expanded="true" />
-            <element signature="e#221#222#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cinkle/swingT/ButtonT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="9" column="36" lean-forward="true" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cinkle/swingT/labelT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/StringBuffer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="351" column="26" lean-forward="true" selection-start-line="351" selection-start-column="26" selection-end-line="351" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/CharSequence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1989">
-          <caret line="183" column="13" selection-start-line="183" selection-start-column="13" selection-end-line="183" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cinkle/httpT/ChineseToURL.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/StringLatin1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-12.0.1/lib/src.zip!/java.base/java/lang/String.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="148" column="31" lean-forward="true" selection-start-line="148" selection-start-column="31" selection-end-line="148" selection-end-column="31" />
-          <folding>
-            <element signature="e#9347#9348#0" expanded="true" />
-            <element signature="e#9397#9398#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cinkle/swingT/SwingConsole.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="7" column="18" selection-start-line="7" selection-start-column="18" selection-end-line="10" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cinkle/swingT/Search.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="27" column="56" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cinkle/swingT/NewHotSortUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3672">
-          <caret line="139" column="52" selection-start-line="139" selection-start-column="52" selection-end-line="139" selection-end-column="52" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4650#4651#0" expanded="true" />
-            <element signature="e#4723#4724#0" expanded="true" />
-            <element signature="e#4798#4799#0" expanded="true" />
-            <element signature="e#4874#4875#0" expanded="true" />
-            <element signature="method#changeFont#0;class#NewHotSortUI#0" />
-            <element signature="method#addPanel#0;class#NewHotSortUI#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cinkle/swingT/BookShow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2294#2295#0" expanded="true" />
-            <element signature="e#2367#2368#0" expanded="true" />
-            <element signature="e#2442#2443#0" expanded="true" />
-            <element signature="e#2518#2519#0" expanded="true" />
-            <element signature="method#initial#0;class#BookShow#0" />
-            <element signature="method#getInformation#0;class#BookShow#0" />
-            <element signature="method#getInfo#0;class#BookShow#0" />
-            <element signature="method#getURLstr#0;class#BookShow#0" />
-            <element signature="method#getPageNum#0;class#BookShow#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cinkle/Test/something.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="22" column="77" selection-start-line="22" selection-start-column="77" selection-end-line="22" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1195#1196#0" expanded="true" />
-            <element signature="e#1265#1266#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cinkle/httpT/VisitWeb.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="110" column="66" lean-forward="true" selection-start-line="110" selection-start-column="66" selection-end-line="110" selection-end-column="66" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#getAllCode#0;class#VisitWeb#0" />
-            <element signature="method#changeUTF8ToURL#0;class#VisitWeb#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cinkle/swingT/BookSearch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="52" column="29" selection-start-line="52" selection-start-column="29" selection-end-line="52" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cinkle/swingT/LabelBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="6" column="33" lean-forward="true" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-          <folding>
-            <element signature="method#LabelBean#0;class#LabelBean#0" />
-            <element signature="method#checkBookName#0;class#LabelBean#0" />
-            <element signature="method#checkInfoDetail#0;class#LabelBean#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cinkle/swingT/UIT.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#mousePressed#0;class#UIT#0" />
-            <element signature="method#mouseReleased#0;class#UIT#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cinkle/jdbcT/jdbcTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1269">
-          <caret line="47" column="21" selection-start-line="47" selection-start-column="21" selection-end-line="47" selection-end-column="21" />
-          <folding>
-            <element signature="e#976#977#0" expanded="true" />
-            <element signature="e#1000#1001#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cinkle/httpT/DLimage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/cinkle/jdbcT/LocationAlgrithm.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="31" column="5" lean-forward="true" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#splitInfoDetail#0;class#LocationAlgrithm#0" />
-            <element signature="method#isTwoZone#0;class#LocationAlgrithm#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="masterDetails">
     <states>

@@ -6,12 +6,18 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.LinkedList;
-
+/*
+*这一个类是系统的搜索栏UI
+* 它会发生两个动作：
+* 第一个动作是将界面跳转到BookSearch界面UI
+* 第二个动作是从网上获取图书的所有信息，并保存在list中
+* */
 public class Search extends JPanel {
 
     private VisitWeb visitweb = VisitWeb.getVisitweb();
-    private LinkedList<LabelBean> list;
+    private ArrayList<LabelBean> list;
 
     private JTextField text=new JTextField(40);
     private JButton button = new JButton("搜索");
@@ -61,10 +67,10 @@ public class Search extends JPanel {
     public String getFieldText(){
         return text.getText();
     }
-    public void setList(LinkedList<LabelBean> L){
+    public void setList(ArrayList<LabelBean> L){
         list = L;
     }
-    public LinkedList<LabelBean> getList(){
+    public ArrayList<LabelBean> getList(){
         return list;
     }
 }

@@ -8,7 +8,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
-import java.util.LinkedList;
+import java.util.*;
 import java.util.regex.*;
 //使用单例模式
 public class VisitWeb {
@@ -30,7 +30,7 @@ public class VisitWeb {
     }
 
     //调用此方法前必须初始化bookname，否则将会抛出异常
-    public LinkedList<LabelBean> getInfomation(){
+    public ArrayList<LabelBean> getInfomation(){
         StringBuilder builder = getAllCode();
         String pattern = "<img class=\"weui_media_appmsg_thumb\" src=\"(.+?)jpg\".+?"+
                 "<h4 class=\"weui_media_title\">(.+?)</h4>.*?"+
@@ -39,7 +39,7 @@ public class VisitWeb {
         Pattern p = Pattern.compile(pattern,Pattern.DOTALL);
         Matcher matcher = p.matcher(builder);
 
-        LinkedList<LabelBean> informaion = new LinkedList<>();
+        ArrayList<LabelBean> informaion = new ArrayList<>(151);
         int index=0;                                     //游标
         while(matcher.find(index)){
             LabelBean bean = new LabelBean();

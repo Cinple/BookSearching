@@ -4,12 +4,16 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
+/*
+*这个类是图书可视化查询系统主界面UI
+* 由三个组件构成：搜索栏，热门借阅和新书通报
+**/
 public class UIT extends JFrame implements MouseListener {
 
     private JPanel mMainJpanel=new JPanel();
     private JPanel mContantPanel = new JPanel();
     private static JFrame mJframe;
+
     Search search;
 
     private JLabel newbook = new JLabel("新书通报");

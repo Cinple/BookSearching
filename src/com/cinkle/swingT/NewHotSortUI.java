@@ -4,7 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-
+/*
+* 点击主页面UI中的热门借阅和新书通报，就可以进入此界面
+* 此页面主要是图书信息的中间环节，分类选取，以获得某一类型的书籍
+* 中间环节没有好好设计请见谅
+* */
 public class NewHotSortUI extends JPanel {
     boolean new_hot;
     JLabel back = new JLabel();

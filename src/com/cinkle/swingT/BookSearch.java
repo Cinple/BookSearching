@@ -4,8 +4,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 import java.util.LinkedList;
-
+/*
+* BookSearch类用于展示图书信息
+* 它包含一个Search，可不断重复搜索
+* 并把Search中的list字段中保存的信息打印到屏幕上
+**/
 public class BookSearch extends JPanel {
     private Search search;
     private JPanel display = new JPanel();
@@ -69,7 +74,7 @@ public class BookSearch extends JPanel {
         add(scroll);
     }
     private void inputDisplay(){
-        LinkedList<LabelBean> list = search.getList();
+        ArrayList<LabelBean> list = search.getList();
         LabelBean temp;
         for(int i =0 ;i < list.size();i++){
             temp = list.get(i);

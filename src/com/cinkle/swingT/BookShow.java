@@ -5,12 +5,15 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+/*
+* 这个类专门用于新书通报与热门借阅中图书信息的展示
+* */
 public class BookShow extends JPanel{
-    private LinkedList<LabelBean> list;
+    private ArrayList<LabelBean> list;
     private JPanel display=new JPanel();
     boolean newHot=false;
     String name;
@@ -109,13 +112,13 @@ public class BookShow extends JPanel{
             list =getInfo(newbook);
         }
     }
-    private LinkedList<LabelBean> getInfo(String pa){
+    private ArrayList<LabelBean> getInfo(String pa){
         String pattern = pa;
         StringBuilder builder = getAllCode();
         Pattern p = Pattern.compile(pattern,Pattern.DOTALL);
         Matcher matcher = p.matcher(builder);
 
-        LinkedList<LabelBean> informaion = new LinkedList<>();
+        ArrayList<LabelBean> informaion = new ArrayList<>(151);
         int index=0;                   //游标
         while(matcher.find(index)){
             LabelBean bean = new LabelBean();
