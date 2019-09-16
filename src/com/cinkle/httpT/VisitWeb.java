@@ -12,26 +12,10 @@ import java.util.*;
 import java.util.regex.*;
 //使用单例模式
 public class VisitWeb {
-    private String bookname;
-    private static VisitWeb visitweb;
-    private VisitWeb(String name){
-        this.bookname=name;
-    }
-    private VisitWeb(){ }
-
-    public static VisitWeb getVisitweb(){
-        if(visitweb == null){
-            visitweb = new VisitWeb();
-        }
-        return visitweb;
-    }
-    public void setBookName(String name){
-        this.bookname = name;
-    }
-
-    //调用此方法前必须初始化bookname，否则将会抛出异常
-    public ArrayList<LabelBean> getInfomation(){
-        StringBuilder builder = getAllCode();
+    public static ArrayList<LabelBean> getInfomation(String bookName,int pageNum){
+        String utf8Name=changeUTF8ToURL(bookName);
+        String url = getURL(utf8Name,pageNum);
+        StringBuilder builder = getSourceCode(url);
         String pattern = "<img class=\"weui_media_appmsg_thumb\" src=\"(.+?)jpg\".+?"+
                 "<h4 class=\"weui_media_title\">(.+?)</h4>.*?"+
                 "<p class=\"weui_media_desc\">(.*?)</p>"+
@@ -39,7 +23,7 @@ public class VisitWeb {
         Pattern p = Pattern.compile(pattern,Pattern.DOTALL);
         Matcher matcher = p.matcher(builder);
 
-        ArrayList<LabelBean> informaion = new ArrayList<>(151);
+        ArrayList<LabelBean> information = new ArrayList<>(11);
         int index=0;                                     //游标
         while(matcher.find(index)){
             LabelBean bean = new LabelBean();
@@ -47,14 +31,14 @@ public class VisitWeb {
             bean.setBookName(matcher.group(2));
             bean.setInfoDatail(matcher.group(3));
             bean.setCollection(matcher.group(4));
-            informaion.add(bean);
+            information.add(bean);
             index =matcher.end();
         }
-
-        return informaion;
-
+        if(information.size()==0)
+            return null;
+        return information;
     }
-    private StringBuilder getAllCode(){
+/*    private StringBuilder getAllCode(){
         StringBuilder result=new StringBuilder();
         int pagenum = getPageNum();
         //限制页数最多为15页
@@ -67,16 +51,19 @@ public class VisitWeb {
             result.append(getSourceCode(strurl));
         }
         return result;
-    }
+    }*/
     //改变字符编码
-    private String changeUTF8ToURL(){
+    public static String changeUTF8ToURL(String bookName){
         String res="";
         try{
-            res = URLEncoder.encode(bookname,"UTF-8");
+            res = URLEncoder.encode(bookName,"UTF-8");
         }catch(UnsupportedEncodingException err){
             System.out.println("中文转URL出现错误");
         }
         return res;
+    }
+    public static String getURL(String utf8Name,int pageNum){
+        return "http://opac.ouc.edu.cn:8081/m/opac/search.action?q=" + utf8Name + "&t=any&page="+pageNum;
     }
     //获取网页源码
     public static StringBuilder getSourceCode(String str_url){
@@ -93,18 +80,18 @@ public class VisitWeb {
             while((s=reader.readLine())!=null)
                 result.append(s+"\n");
         }catch(MalformedURLException err){
-            JOptionPane.showMessageDialog(null,"网络连接错误！");
+            JOptionPane.showMessageDialog(null,"1.网络连接错误！");
         }catch(IOException epp){
-            JOptionPane.showMessageDialog(null,"网络连接错误！");
+            JOptionPane.showMessageDialog(null,"2.网络连接错误！");
         }
         return result;
     }
     //获取源码页数
-    private int getPageNum(){
+    public static int getPageNum(String bookName){
         StringBuilder result;
         int res=-1;
 
-        String str=changeUTF8ToURL();
+        String str=changeUTF8ToURL(bookName);
         str="http://opac.ouc.edu.cn:8081/m/opac/search.action?q="+str+"&t=any";
         result =getSourceCode(str);
 
@@ -114,6 +101,7 @@ public class VisitWeb {
 
         if(matcher.find()){
             res = Integer.parseInt(matcher.group(1));
+            res = res > 15 ? 15 :res;
         }
         else
             res = 1;

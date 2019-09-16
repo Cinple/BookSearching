@@ -29,10 +29,6 @@ public class LabelBean extends JPanel{
     public void setCollection(String col){
         this.collect = col;
     }
-    public void setImageName(String name){
-        this.imagename = name;
-    }
-
 
     JLabel image = new JLabel();
 
@@ -97,6 +93,7 @@ public class LabelBean extends JPanel{
         add(image);
         add(jp);
     }
+//为LabelBea设置图片
     public void setImage(){
         if(imagepath.equals("") || imagepath.equals("/m/mopac/inner/images/no-book.jpg"))
             image.setIcon(new ImageIcon("res/default.jpg"));
@@ -111,10 +108,12 @@ public class LabelBean extends JPanel{
             }
         }
     }
+//限制图书名称长度大小
     public void checkBookName(){
         if(bookname.length()>=35)
             bookname = bookname.substring(0,35);
     }
+//限制图书信息长度大小
     public void checkInfoDetail(){
         if(infodetail.length()>=40)
             infodetail = infodetail.substring(0,40);

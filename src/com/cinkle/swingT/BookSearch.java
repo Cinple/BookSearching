@@ -5,7 +5,6 @@ import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.util.ArrayList;
-import java.util.LinkedList;
 /*
 * BookSearch类用于展示图书信息
 * 它包含一个Search，可不断重复搜索
@@ -78,7 +77,7 @@ public class BookSearch extends JPanel {
         LabelBean temp;
         for(int i =0 ;i < list.size();i++){
             temp = list.get(i);
-            temp.initial();
+//            temp.initial();
             display.add(temp);
         }
     }

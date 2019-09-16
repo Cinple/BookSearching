@@ -1,14 +1,23 @@
 package com.cinkle.swingT;
 
+import com.cinkle.jdbcT.jdbcTest;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
+
 /*
-*这个类是图书可视化查询系统主界面UI
+*这个类是图书可视化查询系统主界面UIr
 * 由三个组件构成：搜索栏，热门借阅和新书通报
 **/
-public class UIT extends JFrame implements MouseListener {
+public class UIT extends JFrame implements MouseListener,Runnable {
 
     private JPanel mMainJpanel=new JPanel();
     private JPanel mContantPanel = new JPanel();
@@ -26,9 +35,19 @@ public class UIT extends JFrame implements MouseListener {
 
     private JPanel newhot=new JPanel();
 
+    private ExecutorService executorService;
+    private jdbcTest jdbc;
+    public UIT(ExecutorService exec,jdbcTest jdbc){
+        this.executorService=exec;
+        this.jdbc=jdbc;
+    }
 
-    public UIT(){
-        search = new Search();
+    @Override
+    public void run(){
+        init();
+    }
+    public void init(){
+        search = new Search(executorService);
 
         //新书通报标签
         nbook.setLayout(new FlowLayout());
@@ -43,6 +62,14 @@ public class UIT extends JFrame implements MouseListener {
         setSize(1200,800);
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//      添加窗口关闭事件：关闭线程池
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                super.windowClosing(e);
+                executorService.shutdownNow();
+            }
+        });
 
         //热门借阅标签
         hborrow.setLayout(new FlowLayout());
@@ -70,12 +97,14 @@ public class UIT extends JFrame implements MouseListener {
         mMainJpanel.setPreferredSize(new Dimension(1000,600));
         mContantPanel.add(mMainJpanel);
 
+
         setLayout(new FlowLayout());
         setContentPane(mContantPanel);
         setTitle("中国海洋大学图书可视化系统");
         ImageIcon icon = new ImageIcon("res/schimg.jpg");
         setIconImage(icon.getImage());
         setVisible(true);
+        mJframe = this;
     }
     //设置新书和热门的监视器
     @Override
@@ -125,6 +154,12 @@ public class UIT extends JFrame implements MouseListener {
         return mContantPanel;
     }
     public static void main(String[] args) {
-        mJframe = new UIT();
+        ExecutorService executorService = new ThreadPoolExecutor(4,8,60, TimeUnit.SECONDS,
+                new LinkedBlockingQueue<>());
+        jdbcTest jdbc = new jdbcTest();
+        executorService.submit(jdbc);
+//        mJframe = new UIT();
+        executorService.submit(new UIT(executorService,jdbc));
+//        executorService.shutdown();
     }
 }
