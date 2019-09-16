@@ -4,16 +4,15 @@
     <list default="true" id="842f364a-6a4d-4886-b658-72c79829f3f0" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/httpT/VisitWeb.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/httpT/VisitWeb.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/jdbcT/jdbcTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/jdbcT/jdbcTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/BookSearch$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/BookSearch$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/BookSearch.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/BookSearch.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/LabelBean$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/LabelBean$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/LabelBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/LabelBean.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/Search$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/Search$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/Search$BeanTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/Search$BeanTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/Search.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/Search.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/UIT.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/swingT/UIT.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/cinkle/httpT/VisitWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cinkle/httpT/VisitWeb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cinkle/jdbcT/jdbcTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cinkle/jdbcT/jdbcTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/cinkle/swingT/BookSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cinkle/swingT/BookSearch.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/cinkle/swingT/LabelBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cinkle/swingT/LabelBean.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/cinkle/swingT/Search.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cinkle/swingT/Search.java" afterDir="false" />
@@ -164,7 +163,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

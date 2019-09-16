@@ -14,7 +14,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /*
-*这个类是图书可视化查询系统主界面UIr
+*这个类是图书可视化查询系统主界面UI
 * 由三个组件构成：搜索栏，热门借阅和新书通报
 **/
 public class UIT extends JFrame implements MouseListener,Runnable {
@@ -148,6 +148,7 @@ public class UIT extends JFrame implements MouseListener,Runnable {
         return mJframe;
     }
     public JPanel getMainJpanel(){
+        search.clearContext();
         return mMainJpanel;
     }
     public JPanel getContPanel(){
@@ -158,8 +159,6 @@ public class UIT extends JFrame implements MouseListener,Runnable {
                 new LinkedBlockingQueue<>());
         jdbcTest jdbc = new jdbcTest();
         executorService.submit(jdbc);
-//        mJframe = new UIT();
         executorService.submit(new UIT(executorService,jdbc));
-//        executorService.shutdown();
     }
 }

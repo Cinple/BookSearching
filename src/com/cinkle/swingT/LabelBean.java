@@ -11,20 +11,19 @@ import java.net.URL;
 
 public class LabelBean extends JPanel{
 
-    private String imagepath="";
-    private String bookname;
-    private String infodetail;
+    private String imagePath="";
+    private String bookName;
+    private String infoDetail;
     private String collect;
-    private String imagename;
 
     public void setImagePath(String path){
-        this.imagepath = path;
+        this.imagePath = path;
     }
     public void setBookName(String name){
-        this.bookname = name;
+        this.bookName = name;
     }
     public void setInfoDatail(String detail){
-        this.infodetail = detail;
+        this.infoDetail = detail;
     }
     public void setCollection(String col){
         this.collect = col;
@@ -44,9 +43,9 @@ public class LabelBean extends JPanel{
         //image.setIcon(new ImageIcon("res/default.jpg"));
         setImage();
         checkBookName();
-        name.setText(bookname);
+        name.setText(bookName);
         checkInfoDetail();
-        info.setText(infodetail);
+        info.setText(infoDetail);
         collection.setText(collect);
 
         GridLayout gl = new GridLayout(4,1);
@@ -95,11 +94,11 @@ public class LabelBean extends JPanel{
     }
 //为LabelBea设置图片
     public void setImage(){
-        if(imagepath.equals("") || imagepath.equals("/m/mopac/inner/images/no-book.jpg"))
+        if(imagePath.equals("") || imagePath.equals("/m/mopac/inner/images/no-book.jpg"))
             image.setIcon(new ImageIcon("res/default.jpg"));
         else{
             try{
-                ImageIcon icon = new ImageIcon(new URL(imagepath));
+                ImageIcon icon = new ImageIcon(new URL(imagePath));
                 ImageIcon con = DLimage.changeSize(icon.getImage());
                 image.setIcon(con);
             }catch(MalformedURLException e){
@@ -110,12 +109,12 @@ public class LabelBean extends JPanel{
     }
 //限制图书名称长度大小
     public void checkBookName(){
-        if(bookname.length()>=35)
-            bookname = bookname.substring(0,35);
+        if(bookName.length()>=35)
+            bookName = bookName.substring(0,35);
     }
 //限制图书信息长度大小
     public void checkInfoDetail(){
-        if(infodetail.length()>=40)
-            infodetail = infodetail.substring(0,40);
+        if(infoDetail.length()>=40)
+            infoDetail = infoDetail.substring(0,40);
     }
 }

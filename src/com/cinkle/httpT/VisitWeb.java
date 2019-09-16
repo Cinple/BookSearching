@@ -1,6 +1,7 @@
 package com.cinkle.httpT;
 
 import com.cinkle.swingT.LabelBean;
+import com.cinkle.swingT.Search;
 
 import javax.swing.*;
 import java.io.*;
@@ -8,11 +9,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
-import java.util.*;
 import java.util.regex.*;
 //使用单例模式
 public class VisitWeb {
-    public static ArrayList<LabelBean> getInfomation(String bookName,int pageNum){
+    public static boolean getInfomation(String bookName, int pageNum, Search search){
         String utf8Name=changeUTF8ToURL(bookName);
         String url = getURL(utf8Name,pageNum);
         StringBuilder builder = getSourceCode(url);
@@ -23,7 +23,7 @@ public class VisitWeb {
         Pattern p = Pattern.compile(pattern,Pattern.DOTALL);
         Matcher matcher = p.matcher(builder);
 
-        ArrayList<LabelBean> information = new ArrayList<>(11);
+        JPanel panel =search.getDisplay();
         int index=0;                                     //游标
         while(matcher.find(index)){
             LabelBean bean = new LabelBean();
@@ -31,12 +31,24 @@ public class VisitWeb {
             bean.setBookName(matcher.group(2));
             bean.setInfoDatail(matcher.group(3));
             bean.setCollection(matcher.group(4));
-            information.add(bean);
+            search.addBean(bean);
             index =matcher.end();
         }
-        if(information.size()==0)
-            return null;
-        return information;
+        if(panel.getComponentCount()==0)
+            return false;
+        return true;
+    }
+    public static Boolean isEmpty(String bookName, int pageNum){
+        String utf8Name=changeUTF8ToURL(bookName);
+        String url = getURL(utf8Name,pageNum);
+        StringBuilder builder = getSourceCode(url);
+        String pattern = "<img class=\"weui_media_appmsg_thumb\" src=\"(.+?)jpg\".+?"+
+                "<h4 class=\"weui_media_title\">(.+?)</h4>.*?"+
+                "<p class=\"weui_media_desc\">(.*?)</p>"+
+                ".+?<li class=\"weui_media_info_meta\">(.*?)</li>";
+        Pattern p = Pattern.compile(pattern,Pattern.DOTALL);
+        Matcher matcher = p.matcher(builder);
+        return !matcher.find();
     }
 /*    private StringBuilder getAllCode(){
         StringBuilder result=new StringBuilder();
