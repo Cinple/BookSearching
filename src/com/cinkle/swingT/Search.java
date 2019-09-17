@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
+import java.util.concurrent.TimeUnit;
 
 /*
 * 这一个类是系统的搜索栏UI
@@ -22,14 +23,17 @@ public class Search extends JPanel {
 
     private CountDownLatch latch;
     private ExecutorService executor;
+    private Object lock=new Object();
 
-    private JPanel display;
+    private JPanel display=new JPanel();
 
     static class BeanTask implements Runnable{
+
         private String bookName;
         private int pageNum;
         private CountDownLatch lat;
         private Search sear;
+
         public BeanTask(String bookName,int pageNum,CountDownLatch lt,Search s){
             this.bookName=bookName;
             this.pageNum=pageNum;
@@ -38,7 +42,7 @@ public class Search extends JPanel {
         }
         @Override
         public void run(){
-            VisitWeb.getInfomation(bookName,pageNum,sear);
+            VisitWeb.getInformation(bookName,pageNum,sear);
             lat.countDown();
         }
     }
@@ -48,7 +52,7 @@ public class Search extends JPanel {
         FlowLayout layout= new FlowLayout();
         setLayout(layout);
 
-        initialDisplay();
+        initialDisplay(display);
 
         text.setFont(new Font("宋体",Font.PLAIN,19));
         button.setFocusPainted(false);
@@ -61,11 +65,13 @@ public class Search extends JPanel {
                 }
                 else{
                     String str = text.getText();
-                    int page = VisitWeb.getPageNum(str);
-                    if(page==1 && VisitWeb.isEmpty(str,page)){
+                    if(VisitWeb.isEmpty(str)){
                         JOptionPane.showMessageDialog(null,"未找到相关书籍");
                     }
                     else{
+                        String utf8Name = VisitWeb.changeUTF8ToURL(str);
+                        String url = "http://opac.ouc.edu.cn:8081/m/opac/search.action?q="+utf8Name+"&t=any";
+                        int page = VisitWeb.getPageNum(url);
 //                      使用多线程执行任务
                         latch =new CountDownLatch(page);
                         BeanTask[] tasks = new BeanTask[page];
@@ -75,18 +81,17 @@ public class Search extends JPanel {
                         }
 
                         try{
-                            latch.await();
+                            latch.await(6,TimeUnit.SECONDS);
                         }catch(InterruptedException p){
                             System.out.println("error int addActionListener in Search class");
                         }
-
                         JFrame frame = UIT.getJframe();
                         frame.getContentPane().removeAll();
 
                         Search temp = new Search(executor);
                         temp.setFieldText(Search.this.getFieldText());
                         Search.this.setFieldText("");
-                        frame.getContentPane().add(new BookSearch(temp,addScrollForDisplay()));
+                        frame.getContentPane().add(new BookSearch(temp,addScrollForDisplay(display,1000,520)));
 
                         frame.getContentPane().validate();
                         frame.getContentPane().repaint();
@@ -97,21 +102,20 @@ public class Search extends JPanel {
         add(text);
         add(button);
     }
-    public void initialDisplay(){
-        display=new JPanel();
+    public static void initialDisplay(JPanel display){
         GridLayout grid = new GridLayout(0,2);
         grid.setVgap(30);
         display.setLayout(grid);
     }
-    public JScrollPane addScrollForDisplay(){
+    public static JScrollPane addScrollForDisplay(JPanel display,int width,int height){
         JScrollPane scroll = new JScrollPane(display);
-        scroll.setPreferredSize(new Dimension(1000,520));
+        scroll.setPreferredSize(new Dimension(width,height));
         scroll.getVerticalScrollBar().setUnitIncrement(20);
         return scroll;
     }
     public void addBean(LabelBean bean){
         bean.initial();
-        synchronized (display){
+        synchronized (lock){
             display.add(bean);
         }
     }

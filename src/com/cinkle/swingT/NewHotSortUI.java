@@ -4,13 +4,17 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.util.concurrent.ExecutorService;
+
 /*
 * 点击主页面UI中的热门借阅和新书通报，就可以进入此界面
 * 此页面主要是图书信息的中间环节，分类选取，以获得某一类型的书籍
 * 中间环节没有好好设计请见谅
 * */
 public class NewHotSortUI extends JPanel {
+
     boolean new_hot;
+
     JLabel back = new JLabel();
     JLabel home = new JLabel();
     JPanel backhome = new JPanel();
@@ -44,8 +48,12 @@ public class NewHotSortUI extends JPanel {
         new JLabel("Z.综合性图书") };
 
     JPanel typeall = new JPanel();
-    public NewHotSortUI(boolean bool){
+
+    ExecutorService service;
+    public NewHotSortUI(boolean bool, ExecutorService service){
         new_hot = bool;
+        this.service=service;
+
         FlowLayout father = new FlowLayout();
         father.setAlignment(FlowLayout.LEFT);
         father.setHgap(30);
@@ -95,7 +103,7 @@ public class NewHotSortUI extends JPanel {
             public void mouseClicked(MouseEvent e) {
                 JFrame frame = UIT.getJframe();
                 frame.getContentPane().removeAll();
-                frame.getContentPane().add(new BookShow(new_hot,label.getText()));
+                frame.getContentPane().add(new BookShow(new_hot,label.getText(),service));
                 frame.getContentPane().validate();
                 frame.getContentPane().repaint();
                 setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
@@ -103,12 +111,10 @@ public class NewHotSortUI extends JPanel {
 
             @Override
             public void mousePressed(MouseEvent e) {
-
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
-
             }
 
             @Override
@@ -142,12 +148,10 @@ public class NewHotSortUI extends JPanel {
 
             @Override
             public void mousePressed(MouseEvent e) {
-
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
-
             }
 
             @Override

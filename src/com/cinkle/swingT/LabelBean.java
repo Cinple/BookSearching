@@ -109,12 +109,12 @@ public class LabelBean extends JPanel{
     }
 //限制图书名称长度大小
     public void checkBookName(){
-        if(bookName.length()>=35)
-            bookName = bookName.substring(0,35);
+        if(bookName.length()>=30)
+            bookName = bookName.substring(0,30);
     }
 //限制图书信息长度大小
     public void checkInfoDetail(){
-        if(infoDetail.length()>=40)
-            infoDetail = infoDetail.substring(0,40);
+        if(infoDetail.length()>=35)
+            infoDetail = infoDetail.substring(0,35);
     }
 }

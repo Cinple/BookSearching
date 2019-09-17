@@ -13,8 +13,10 @@ public class BookSearch extends JPanel {
     private Search search;
     private JLabel home = new JLabel(new ImageIcon("res/home.jpg"));
     private JPanel Home = new JPanel();
+    JScrollPane scrollpane;
     public BookSearch(Search sear,JScrollPane scroll){
         search = sear;
+        this.scrollpane=scroll;
         search.setPreferredSize(new Dimension(1150,90));
 
         home.addMouseListener(new MouseListener() {
@@ -31,12 +33,10 @@ public class BookSearch extends JPanel {
 
             @Override
             public void mousePressed(MouseEvent e) {
-
             }
 
             @Override
             public void mouseReleased(MouseEvent e) {
-
             }
 
             @Override
@@ -59,6 +59,6 @@ public class BookSearch extends JPanel {
         setPreferredSize(new Dimension(1200,800));
         add(Home);
         add(search);
-        add(scroll);
+        add(scrollpane);
     }
 }

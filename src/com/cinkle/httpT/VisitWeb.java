@@ -10,12 +10,14 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.util.regex.*;
-//使用单例模式
+
 public class VisitWeb {
-    public static boolean getInfomation(String bookName, int pageNum, Search search){
+    public static boolean getInformation(String bookName, int pageNum, Search search){
         String utf8Name=changeUTF8ToURL(bookName);
         String url = getURL(utf8Name,pageNum);
         StringBuilder builder = getSourceCode(url);
+        if(builder==null)
+            return false;
         String pattern = "<img class=\"weui_media_appmsg_thumb\" src=\"(.+?)jpg\".+?"+
                 "<h4 class=\"weui_media_title\">(.+?)</h4>.*?"+
                 "<p class=\"weui_media_desc\">(.*?)</p>"+
@@ -38,14 +40,17 @@ public class VisitWeb {
             return false;
         return true;
     }
-    public static Boolean isEmpty(String bookName, int pageNum){
+    public static Boolean isEmpty(String bookName){
         String utf8Name=changeUTF8ToURL(bookName);
-        String url = getURL(utf8Name,pageNum);
+        String url = getURL(utf8Name,1);
         StringBuilder builder = getSourceCode(url);
-        String pattern = "<img class=\"weui_media_appmsg_thumb\" src=\"(.+?)jpg\".+?"+
-                "<h4 class=\"weui_media_title\">(.+?)</h4>.*?"+
-                "<p class=\"weui_media_desc\">(.*?)</p>"+
-                ".+?<li class=\"weui_media_info_meta\">(.*?)</li>";
+        if(builder==null)
+            return true;
+//        String pattern = "<img class=\"weui_media_appmsg_thumb\" src=\"(.+?)jpg\".+?"+
+//                "<h4 class=\"weui_media_title\">(.+?)</h4>.*?"+
+//                "<p class=\"weui_media_desc\">(.*?)</p>"+
+//                ".+?<li class=\"weui_media_info_meta\">(.*?)</li>";
+        String pattern ="<h4 class=\"weui_media_title\">(.+?)</h4>";
         Pattern p = Pattern.compile(pattern,Pattern.DOTALL);
         Matcher matcher = p.matcher(builder);
         return !matcher.find();
@@ -92,20 +97,19 @@ public class VisitWeb {
             while((s=reader.readLine())!=null)
                 result.append(s+"\n");
         }catch(MalformedURLException err){
-            JOptionPane.showMessageDialog(null,"1.网络连接错误！");
+//            JOptionPane.showMessageDialog(null,"1.网络连接错误！");
+            return null;
         }catch(IOException epp){
-            JOptionPane.showMessageDialog(null,"2.网络连接错误！");
+//            JOptionPane.showMessageDialog(null,"2.网络连接错误！");
+            return null;
         }
         return result;
     }
-    //获取源码页数
-    public static int getPageNum(String bookName){
+    //获取源码页数n
+    public static int getPageNum(String url){
         StringBuilder result;
         int res=-1;
-
-        String str=changeUTF8ToURL(bookName);
-        str="http://opac.ouc.edu.cn:8081/m/opac/search.action?q="+str+"&t=any";
-        result =getSourceCode(str);
+        result =getSourceCode(url);
 
         String pattern ="<div class=\"center\">\\d+/(\\d+)</div>";
         Pattern p = Pattern.compile(pattern);
@@ -113,7 +117,7 @@ public class VisitWeb {
 
         if(matcher.find()){
             res = Integer.parseInt(matcher.group(1));
-            res = res > 15 ? 15 :res;
+            res = res > 15 ? 15 : res;
         }
         else
             res = 1;
