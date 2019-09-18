@@ -1,7 +1,5 @@
 package com.cinkle.swingT;
 
-import com.cinkle.jdbcT.jdbcTest;
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -9,9 +7,6 @@ import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
 
 /*
 *这个类是图书可视化查询系统主界面UI
@@ -34,10 +29,8 @@ public class UIT extends JFrame implements MouseListener,Runnable {
     private JPanel hborrow = new JPanel();
 
     private ExecutorService executorService;
-    private jdbcTest jdbc;
-    public UIT(ExecutorService exec,jdbcTest jdbc){
+    public UIT(ExecutorService exec){
         this.executorService=exec;
-        this.jdbc=jdbc;
     }
 
     @Override
@@ -149,12 +142,5 @@ public class UIT extends JFrame implements MouseListener,Runnable {
     }
     public JPanel getContPanel(){
         return mContantPanel;
-    }
-    public static void main(String[] args) {
-        ExecutorService executorService = new ThreadPoolExecutor(4,8,60, TimeUnit.SECONDS,
-                new LinkedBlockingQueue<>());
-        jdbcTest jdbc = new jdbcTest();
-        executorService.submit(jdbc);
-        executorService.submit(new UIT(executorService,jdbc));
     }
 }

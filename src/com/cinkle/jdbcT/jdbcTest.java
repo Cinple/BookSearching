@@ -6,13 +6,15 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
-
+//单例模式
 public class jdbcTest implements Runnable{
     private Connection con;
     private Statement stmt;
     private ResultSet rs;
     private LinkedList<CellBean> list=new LinkedList<>();
-    private Boolean bool=false;
+
+    static private jdbcTest jdbc;
+
     static class CellBean{
         int id;
         int side;
@@ -29,6 +31,10 @@ public class jdbcTest implements Runnable{
             this.second=second;
         }
     }
+    public static jdbcTest getJdbc(){
+        return jdbc;
+    }
+    public jdbcTest(){}
     public void init(String sql){
         try{
             //加载驱动器，下面的代码为加载MySQL驱动器
@@ -36,7 +42,7 @@ public class jdbcTest implements Runnable{
             //注册MySQL驱动器
             //DriverManager.registerDriver(new com.mysql.jdbc.Driver());
             //连接到数据库的URL
-            String url = "jdbc:mysql://localhost:3306/library?useUnicode=true&serverTimezone=UTC";
+            String url = "jdbc:mysql://localhost:3306/library?useUnicode=true&serverTimezone=UTC&useSSL=false";
             String username="root";
             String password="hoh473726";
             con= DriverManager.getConnection(url,username,password);
@@ -71,17 +77,11 @@ public class jdbcTest implements Runnable{
                 String second=rs.getString("number_second");
                 list.add(new CellBean(id,side,line,row,first,second));
             }
-            bool =true;
+            jdbc=this;
             System.out.println(list.size());
             close();
         }catch(Exception e){
             System.out.println("database raised error");
         }
-    }
-    public static void main(String[] args) throws Exception{
-        ExecutorService executorService = new ThreadPoolExecutor(4,8,60, TimeUnit.SECONDS,
-                new LinkedBlockingQueue<>());
-
-        executorService.submit(new jdbcTest());
     }
 }
