@@ -1,5 +1,6 @@
 package com.cinkle.swingT;
 
+import com.cinkle.Test.Main;
 import com.cinkle.httpT.VisitWeb;
 
 import javax.swing.*;
@@ -22,7 +23,6 @@ public class Search extends JPanel {
     private JButton button = new JButton("搜索");
 
     private CountDownLatch latch;
-    private ExecutorService executor;
     private Object lock=new Object();
 
     private JPanel display=new JPanel();
@@ -47,8 +47,7 @@ public class Search extends JPanel {
         }
     }
 
-    public Search(ExecutorService e){
-        this.executor=e;
+    public Search(){
         FlowLayout layout= new FlowLayout();
         setLayout(layout);
 
@@ -74,6 +73,7 @@ public class Search extends JPanel {
                         int page = VisitWeb.getPageNum(url);
 //                      使用多线程执行任务
                         latch =new CountDownLatch(page);
+                        ExecutorService executor = Main.getExecutorService();
                         BeanTask[] tasks = new BeanTask[page];
                         for(int i=0;i <= page-1;i++){
                             tasks[i]=new BeanTask(str,i+1,latch,Search.this);
@@ -88,7 +88,7 @@ public class Search extends JPanel {
                         JFrame frame = UIT.getJframe();
                         frame.getContentPane().removeAll();
 
-                        Search temp = new Search(executor);
+                        Search temp = new Search();
                         temp.setFieldText(Search.this.getFieldText());
                         Search.this.setFieldText("");
                         frame.getContentPane().add(new BookSearch(temp,addScrollForDisplay(display,1000,520)));

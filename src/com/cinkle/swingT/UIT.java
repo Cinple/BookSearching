@@ -1,5 +1,8 @@
 package com.cinkle.swingT;
 
+import com.cinkle.Test.Main;
+import com.cinkle.jdbcT.jdbcTest;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
@@ -28,17 +31,15 @@ public class UIT extends JFrame implements MouseListener,Runnable {
     private JLabel hotborrowimage = new JLabel(new ImageIcon("res/hotbok.jpg"));      //300*180
     private JPanel hborrow = new JPanel();
 
-    private ExecutorService executorService;
-    public UIT(ExecutorService exec){
-        this.executorService=exec;
-    }
+//    private ExecutorService executorService;
+    public UIT(){}
 
     @Override
     public void run(){
         init();
     }
     public void init(){
-        search = new Search(executorService);
+        search = new Search();
 
         JPanel newhot=new JPanel();
         //新书通报标签
@@ -59,7 +60,10 @@ public class UIT extends JFrame implements MouseListener,Runnable {
             @Override
             public void windowClosing(WindowEvent e) {
                 super.windowClosing(e);
+                ExecutorService executorService = Main.getExecutorService();
                 executorService.shutdownNow();
+                jdbcTest jdbc = jdbcTest.getJdbc();
+                jdbc.close();
             }
         });
 
@@ -102,13 +106,13 @@ public class UIT extends JFrame implements MouseListener,Runnable {
     public void mouseClicked(MouseEvent e) {
         if(e.getSource()== nbook){
             getContentPane().removeAll();
-            getContentPane().add(new NewHotSortUI(false,executorService));
+            getContentPane().add(new NewHotSortUI(false));
             getContentPane().validate();
             getContentPane().repaint();
         }
         else if(e.getSource() == hborrow){
             getContentPane().removeAll();
-            getContentPane().add(new NewHotSortUI(true,executorService));
+            getContentPane().add(new NewHotSortUI(true));
             getContentPane().validate();
             getContentPane().repaint();
         }

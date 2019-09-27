@@ -86,9 +86,12 @@ public class VisitWeb {
     public static StringBuilder getSourceCode(String str_url){
         StringBuilder result= new StringBuilder();
         try{
+            System.out.println("URL开始标记"+str_url);
             URL url = new URL(str_url);
             URLConnection connection = url.openConnection();
             connection.connect();
+
+            System.out.println("URL完成标记");
 
             InputStream in =connection.getInputStream();
             InputStreamReader inreader = new InputStreamReader(in);
@@ -96,11 +99,11 @@ public class VisitWeb {
             String s="";
             while((s=reader.readLine())!=null)
                 result.append(s+"\n");
-        }catch(MalformedURLException err){
-//            JOptionPane.showMessageDialog(null,"1.网络连接错误！");
+        }/*catch(MalformedURLException err){
+            JOptionPane.showMessageDialog(null,"1.网络连接错误！");
             return null;
-        }catch(IOException epp){
-//            JOptionPane.showMessageDialog(null,"2.网络连接错误！");
+        }*/catch(IOException epp){
+            JOptionPane.showMessageDialog(null,"2.网络连接错误！");
             return null;
         }
         return result;

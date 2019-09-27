@@ -1,7 +1,11 @@
 package com.cinkle.jdbcT;
 
+import javax.swing.plaf.IconUIResource;
 import java.sql.*;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
+import java.util.TreeSet;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -10,9 +14,10 @@ import java.util.concurrent.TimeUnit;
 public class jdbcTest implements Runnable{
     private Connection con;
     private Statement stmt;
-    private ResultSet rs;
+//    private ResultSet rs;
     private LinkedList<CellBean> list=new LinkedList<>();
-
+//    private HashMap<String,Integer> category=new HashMap<>();
+    private HashSet<String> category = new HashSet<>();
     static private jdbcTest jdbc;
 
     static class CellBean{
@@ -35,7 +40,7 @@ public class jdbcTest implements Runnable{
         return jdbc;
     }
     public jdbcTest(){}
-    public void init(String sql){
+    public void init(){
         try{
             //加载驱动器，下面的代码为加载MySQL驱动器
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -47,27 +52,40 @@ public class jdbcTest implements Runnable{
             String password="hoh473726";
             con= DriverManager.getConnection(url,username,password);
             stmt=con.createStatement();
-            rs = stmt.executeQuery(sql);
         }catch(Exception e){
             System.out.println("this is error");
         }
     }
-    public void close() throws Exception{
-        if(con != null)
-            con.close();
-        if(stmt != null)
-            stmt.close();
-        if(rs != null)
-            rs.close();
+    public ResultSet query(String sql){
+        ResultSet rs;
+        try{
+            rs=stmt.executeQuery(sql);
+            return rs;
+        }catch(SQLException e){
+            System.out.println("There was a SQLException when get result");
+        }
+        return null;
+    }
+    public void close(){
+        try{
+            if(con != null)
+                con.close();
+            if(stmt != null)
+                stmt.close();
+        }catch(SQLException e){
+            System.out.println("error when close");
+        }
     }
     public LinkedList<CellBean> getList(){
         return list;
     }
-    @Override
-    public void run(){
+    public HashSet<String> getSet(){
+        return category;
+    }
+    public void setList(){
         String sql ="select * from branch";
+        ResultSet rs=query(sql);
         try{
-            init(sql);
             while(rs.next()){
                 int id =rs.getInt("shelf_id");
                 int side=rs.getInt("side");
@@ -77,11 +95,29 @@ public class jdbcTest implements Runnable{
                 String second=rs.getString("number_second");
                 list.add(new CellBean(id,side,line,row,first,second));
             }
-            jdbc=this;
-            System.out.println(list.size());
-            close();
         }catch(Exception e){
-            System.out.println("database raised error");
+            System.out.println("error when set List");
         }
+    }
+    public void setCategory(){
+        String sql="select * from total";
+        ResultSet  rs=query(sql);
+        try{
+            while(rs.next()){
+                String  str = rs.getString("number");
+//                不需要书架的ID是因为ID不全，一个类型可能分布在多个书架上
+//                int id=rs.getInt("shelf_id");
+                category.add(str);
+            }
+        }catch(SQLException e){
+            System.out.println("error when set Set");
+        }
+    }
+    @Override
+    public void run(){
+        init();
+        setList();
+        setCategory();
+        jdbc=this;
     }
 }

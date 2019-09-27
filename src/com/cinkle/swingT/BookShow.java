@@ -1,5 +1,6 @@
 package com.cinkle.swingT;
 
+import com.cinkle.Test.Main;
 import com.cinkle.httpT.VisitWeb;
 import javax.swing.*;
 import java.awt.*;
@@ -23,7 +24,6 @@ public class BookShow extends JPanel{
     JPanel backhome = new JPanel();
 
     CountDownLatch latch;
-    ExecutorService service;
     static class BeanTask implements Runnable{
         CountDownLatch lat;
         BookShow show;
@@ -39,15 +39,15 @@ public class BookShow extends JPanel{
             lat.countDown();
         }
     }
-    public BookShow(boolean newhot, String n, ExecutorService s){
+    public BookShow(boolean newhot, String n){
         newHot = newhot;
         name =n;
-        service=s;
 
         Search.initialDisplay(display);
         String url = getURLstr();
         int pageNum =VisitWeb.getPageNum(url);
         latch = new CountDownLatch(pageNum);
+        ExecutorService service = Main.getExecutorService();
         BeanTask[] task = new BeanTask[pageNum];
         for(int i=0;i<=pageNum-1;i++){
             String URL = getURL(url,i+1);
@@ -104,7 +104,7 @@ public class BookShow extends JPanel{
                     frame.getContentPane().add(panel);
                 }
                 else if(e.getSource() == back){
-                    frame.getContentPane().add(new NewHotSortUI(newHot,service));
+                    frame.getContentPane().add(new NewHotSortUI(newHot));
                 }
                 frame.getContentPane().validate();
                 frame.getContentPane().repaint();

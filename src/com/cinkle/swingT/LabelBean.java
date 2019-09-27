@@ -1,6 +1,7 @@
 package com.cinkle.swingT;
 
 import com.cinkle.httpT.DLimage;
+import com.cinkle.jdbcT.LocationAlgrithm;
 
 import javax.swing.*;
 import java.awt.*;
@@ -56,6 +57,9 @@ public class LabelBean extends JPanel{
             @Override
             public void mouseClicked(MouseEvent e) {
                 System.out.println("位置被单击了");
+                LocationAlgrithm lc=LocationAlgrithm.getLocationAlgrithm();
+                lc.setInformation(infoDetail);
+                lc.getResult();
             }
 
             @Override

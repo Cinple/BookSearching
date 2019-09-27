@@ -49,10 +49,8 @@ public class NewHotSortUI extends JPanel {
 
     JPanel typeall = new JPanel();
 
-    ExecutorService service;
-    public NewHotSortUI(boolean bool, ExecutorService service){
+    public NewHotSortUI(boolean bool){
         new_hot = bool;
-        this.service=service;
 
         FlowLayout father = new FlowLayout();
         father.setAlignment(FlowLayout.LEFT);
@@ -103,7 +101,7 @@ public class NewHotSortUI extends JPanel {
             public void mouseClicked(MouseEvent e) {
                 JFrame frame = UIT.getJframe();
                 frame.getContentPane().removeAll();
-                frame.getContentPane().add(new BookShow(new_hot,label.getText(),service));
+                frame.getContentPane().add(new BookShow(new_hot,label.getText()));
                 frame.getContentPane().validate();
                 frame.getContentPane().repaint();
                 setCursor(new Cursor(Cursor.DEFAULT_CURSOR));
