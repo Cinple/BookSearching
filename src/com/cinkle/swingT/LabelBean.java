@@ -56,7 +56,6 @@ public class LabelBean extends JPanel{
         pos.addMouseListener(new MouseListener() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                System.out.println("位置被单击了");
                 LocationAlgrithm lc=LocationAlgrithm.getLocationAlgrithm();
                 lc.setInformation(infoDetail);
                 lc.getResult();

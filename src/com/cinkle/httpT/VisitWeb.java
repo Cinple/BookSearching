@@ -86,12 +86,9 @@ public class VisitWeb {
     public static StringBuilder getSourceCode(String str_url){
         StringBuilder result= new StringBuilder();
         try{
-            System.out.println("URL开始标记"+str_url);
             URL url = new URL(str_url);
             URLConnection connection = url.openConnection();
             connection.connect();
-
-            System.out.println("URL完成标记");
 
             InputStream in =connection.getInputStream();
             InputStreamReader inreader = new InputStreamReader(in);

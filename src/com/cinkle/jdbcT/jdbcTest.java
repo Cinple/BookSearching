@@ -76,6 +76,24 @@ public class jdbcTest implements Runnable{
             System.out.println("error when close");
         }
     }
+    public void changeBean() throws Exception{
+        for(CellBean bean : list){
+            if(!bean.first.contains("/")){
+                bean.first=bean.second;
+                String sql="update branch set number_first = \""+bean.second+"\" where shelf_id = "+bean.id+" && side = "+bean.side+" && line_shelf = "+bean.line+
+                        " && row_shelf = "+bean.row;
+                System.out.println(sql);
+                stmt.executeUpdate(sql);
+            }
+            if(!bean.second.contains("/")){
+                bean.second=bean.first;
+                String sql="update branch set number_second = \""+bean.first+"\" where shelf_id = "+bean.id+" && side = "+bean.side+" && line_shelf = "+bean.line+
+                        " && row_shelf = "+bean.row;
+                System.out.println(sql);
+                stmt.executeUpdate(sql);
+            }
+        }
+    }
     public LinkedList<CellBean> getList(){
         return list;
     }
@@ -117,7 +135,14 @@ public class jdbcTest implements Runnable{
     public void run(){
         init();
         setList();
+
         setCategory();
         jdbc=this;
+    }
+
+    public static void main(String[] args) throws Exception{
+        jdbcTest test = new jdbcTest();
+        test.run();
+        test.changeBean();
     }
 }

@@ -1,6 +1,10 @@
 package com.cinkle.jdbcT;
 
 import javax.swing.*;
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.OutputStream;
+import java.io.OutputStreamWriter;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -17,21 +21,20 @@ public class LocationAlgrithm {
 //    是否找到相同的分类号
     boolean founded;
 
-    private static LocationAlgrithm locationAlgrithm;
+    private static LocationAlgrithm locationAlgrithm=new LocationAlgrithm("");
     public static LocationAlgrithm getLocationAlgrithm(){
         return locationAlgrithm;
     }
 
     public LocationAlgrithm(String informDetail){
         this.information=informDetail;
-        locationAlgrithm  = this;
     }
     public void setInformation(String informDetail){
         this.information=informDetail;
     }
 //    检查原始数据的合法性
     public boolean checkLegitimacy(){
-        if(!splitInfoDetail()&&!isTwoZone())
+        if(!splitInfoDetail()||!isTwoZone())
             return false;
         return true;
     }
@@ -141,31 +144,13 @@ public class LocationAlgrithm {
     }
     private jdbcTest.CellBean comparePosition(jdbcTest.CellBean bean1,jdbcTest.CellBean bean2){
         jdbcTest.CellBean result=null;
-        if(bean1.id<bean2.id){
+        if((bean1.id<bean2.id)||
+                (bean1.id==bean2.id&&bean1.side>bean2.side)||
+                (bean1.id==bean2.id&&bean1.side==bean2.side&&bean1.line<bean2.line)||
+                (bean1.id==bean2.id&&bean1.side==bean2.side&&bean1.line==bean2.line&&bean1.row<bean2.row))
             result=bean1;
-        }else if(bean2.id<bean1.id){
+        else
             result=bean2;
-        }else{
-            if(bean1.side>bean2.side){
-                result=bean1;
-            }else if(bean2.side>bean1.side){
-                result=bean2;
-            }else{
-                if(bean1.line<bean2.line){
-                    result=bean1;
-                }else if(bean2.line<bean1.line){
-                    result=bean2;
-                }else{
-                    if(bean1.row<bean2.row){
-                        result=bean1;
-                    }else if(bean2.row<bean1.row){
-                        result=bean2;
-                    }else{
-                        result=bean1;
-                    }
-                }
-            }
-        }
         return result;
     }
 //    获取记录中索书号的分类号
@@ -255,10 +240,6 @@ public class LocationAlgrithm {
         }
         return str;
     }
-//    比较排列号
-    public boolean compare(int a,int b){
-        return a>=b;
-    }
 //    将CellBean转换为适合传递的格式，比如字符串
     private String transformResult(jdbcTest.CellBean bean){
         return bean.id+"#"+bean.side+"#"+bean.row+"#"+bean.line;
@@ -266,6 +247,20 @@ public class LocationAlgrithm {
 //    启动Unity应用程序,并传送数据
     private void startUpUnity(String result){
         System.out.println(result);
+        ProcessBuilder processBuilder=new ProcessBuilder();
+        processBuilder.command("E:\\BTNBOOK.exe");
+        try{
+            Process process =processBuilder.start();
+//            OutputStream outputStream=process.getOutputStream();
+//
+//            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream);
+//            BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
+//            bufferedWriter.write(result);
+//            bufferedWriter.flush();
+            System.out.println("此次操作已经完成"+process.pid());
+        }catch(IOException e){
+            e.printStackTrace();
+        }
     }
 //    求两个字符串的最长字符串子序列的长度。
     public int longestSequence(String str1,String str2){
@@ -297,8 +292,8 @@ public class LocationAlgrithm {
         return lastLine[length1-1];
     }
     public static void main(String[] args) {
-        LocationAlgrithm algrithm = new LocationAlgrithm("132654");
-        System.out.println(algrithm.longestSequence("10203040506","919293945969"));
-        System.out.println(algrithm.convertArrayNumber("324"));
+        new jdbcTest().run();
+        LocationAlgrithm algrithm = new LocationAlgrithm("I712.45/907侯赛尼/上海人民出版社/ 2006");
+        algrithm.getResult();
     }
 }
