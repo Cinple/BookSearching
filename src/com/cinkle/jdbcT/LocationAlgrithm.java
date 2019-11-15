@@ -1,10 +1,7 @@
 package com.cinkle.jdbcT;
 
 import javax.swing.*;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
+import java.io.*;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.LinkedList;
@@ -242,14 +239,20 @@ public class LocationAlgrithm {
     }
 //    将CellBean转换为适合传递的格式，比如字符串
     private String transformResult(jdbcTest.CellBean bean){
-        return bean.id+"#"+bean.side+"#"+bean.row+"#"+bean.line;
+        return bean.id+"#"+(bean.side+1)+"#"+bean.row+"#"+bean.line;
     }
 //    启动Unity应用程序,并传送数据
     private void startUpUnity(String result){
         System.out.println(result);
         ProcessBuilder processBuilder=new ProcessBuilder();
-        processBuilder.command("E:\\BTNBOOK.exe");
+        processBuilder.command("unitygo\\图书馆Search.exe");
+
+        File file = new File("unitygo\\图书馆Search_Data\\StreamingAssets\\MyTxt.txt");
         try{
+            FileWriter  writer = new  FileWriter(file);
+            writer.write(result);
+            writer.flush();
+            writer.close();
             Process process =processBuilder.start();
 //            OutputStream outputStream=process.getOutputStream();
 //
