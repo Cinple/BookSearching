@@ -243,7 +243,7 @@ public class LocationAlgrithm {
     }
 //    启动Unity应用程序,并传送数据
     private void startUpUnity(String result){
-        System.out.println(result);
+        System.out.println("这是中文"+result);
         ProcessBuilder processBuilder=new ProcessBuilder();
         processBuilder.command("unitygo\\图书馆Search.exe");
 

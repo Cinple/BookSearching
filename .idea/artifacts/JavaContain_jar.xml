@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact name="JavaContain:jar">
+    <output-path>$PROJECT_DIR$</output-path>
+    <root id="root">
+      <element id="archive" name="JavaContain.jar">
+        <element id="module-output" name="JavaContain" />
+      </element>
+    </root>
+  </artifact>
+</component>

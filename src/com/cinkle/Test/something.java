@@ -63,8 +63,6 @@ public class something {
     }
 //    程序入口
     public static void main(String[] args) {
-        RandomLocation lt=new RandomLocation();
-        lt.setLocation();
-        lt.startUp();
+        System.out.println("当前JVM字符集"+System.getProperty("file.encoding"));
     }
 }

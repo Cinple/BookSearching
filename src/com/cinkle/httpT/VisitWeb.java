@@ -91,7 +91,7 @@ public class VisitWeb {
             connection.connect();
 
             InputStream in =connection.getInputStream();
-            InputStreamReader inreader = new InputStreamReader(in);
+            InputStreamReader inreader = new InputStreamReader(in,"utf8");
             BufferedReader reader = new BufferedReader(inreader);
             String s="";
             while((s=reader.readLine())!=null)
