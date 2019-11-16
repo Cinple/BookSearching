@@ -7,19 +7,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="842f364a-6a4d-4886-b658-72c79829f3f0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/JavaContain_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_15.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JavaContain.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaContain.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/Test/something.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/Test/something.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/httpT/VisitWeb.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/httpT/VisitWeb.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/jdbcT/LocationAlgrithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/jdbcT/LocationAlgrithm.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cinkle/Test/something.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cinkle/Test/something.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cinkle/httpT/VisitWeb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cinkle/httpT/VisitWeb.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/cinkle/jdbcT/LocationAlgrithm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cinkle/jdbcT/LocationAlgrithm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/unitygo/图书馆Search_Data/StreamingAssets/MyTxt.txt" beforeDir="false" afterPath="$PROJECT_DIR$/unitygo/图书馆Search_Data/StreamingAssets/MyTxt.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

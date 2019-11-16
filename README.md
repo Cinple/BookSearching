@@ -1,4 +1,12 @@
 # JavaProject
-my project
-I don't know what that mean.
-change it and don't need a new branch?
+
+此项目为中国海洋大学SRDP项目。
+
+主要功能是简单的图书展示客户端与Unity制作的可视化图书定位脚本。
+
+需要连接中国海洋大学VPN才能获取图书信息，不然会返回网络连接错误。
+
+图书的定位需要使用MySQL服务器中的数据，没有的话使用文件夹library_data下的数据文件自行建立。
+
+没有将jar包转化为exe可执行文件，所以需要JRE。
+
