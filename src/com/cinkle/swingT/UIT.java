@@ -1,14 +1,21 @@
 package com.cinkle.swingT;
 
+import com.cinkle.Test.Main;
+import com.cinkle.jdbcT.jdbcTest;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.util.concurrent.ExecutorService;
+
 /*
 *这个类是图书可视化查询系统主界面UI
 * 由三个组件构成：搜索栏，热门借阅和新书通报
 **/
-public class UIT extends JFrame implements MouseListener {
+public class UIT extends JFrame implements MouseListener,Runnable {
 
     private JPanel mMainJpanel=new JPanel();
     private JPanel mContantPanel = new JPanel();
@@ -24,12 +31,17 @@ public class UIT extends JFrame implements MouseListener {
     private JLabel hotborrowimage = new JLabel(new ImageIcon("res/hotbok.jpg"));      //300*180
     private JPanel hborrow = new JPanel();
 
-    private JPanel newhot=new JPanel();
+//    private ExecutorService executorService;
+    public UIT(){}
 
-
-    public UIT(){
+    @Override
+    public void run(){
+        init();
+    }
+    public void init(){
         search = new Search();
 
+        JPanel newhot=new JPanel();
         //新书通报标签
         nbook.setLayout(new FlowLayout());
         nbook.add(newbookimage);
@@ -43,6 +55,17 @@ public class UIT extends JFrame implements MouseListener {
         setSize(1200,800);
         setResizable(false);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//      添加窗口关闭事件：关闭线程池
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                super.windowClosing(e);
+                ExecutorService executorService = Main.getExecutorService();
+                executorService.shutdownNow();
+                jdbcTest jdbc = jdbcTest.getJdbc();
+                jdbc.close();
+            }
+        });
 
         //热门借阅标签
         hborrow.setLayout(new FlowLayout());
@@ -76,6 +99,7 @@ public class UIT extends JFrame implements MouseListener {
         ImageIcon icon = new ImageIcon("res/schimg.jpg");
         setIconImage(icon.getImage());
         setVisible(true);
+        mJframe = this;
     }
     //设置新书和热门的监视器
     @Override
@@ -97,12 +121,10 @@ public class UIT extends JFrame implements MouseListener {
 
     @Override
     public void mousePressed(MouseEvent e) {
-
     }
 
     @Override
     public void mouseReleased(MouseEvent e) {
-
     }
 
     @Override
@@ -119,12 +141,10 @@ public class UIT extends JFrame implements MouseListener {
         return mJframe;
     }
     public JPanel getMainJpanel(){
+        search.clearContext();
         return mMainJpanel;
     }
     public JPanel getContPanel(){
         return mContantPanel;
-    }
-    public static void main(String[] args) {
-        mJframe = new UIT();
     }
 }
