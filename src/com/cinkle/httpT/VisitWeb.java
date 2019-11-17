@@ -5,7 +5,6 @@ import com.cinkle.swingT.Search;
 
 import javax.swing.*;
 import java.io.*;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
