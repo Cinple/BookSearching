@@ -1,7 +1,5 @@
 package com.cinkle.Test;
 
-import com.cinkle.swingT.SwingConsole;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
