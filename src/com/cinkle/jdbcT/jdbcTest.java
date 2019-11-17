@@ -1,6 +1,5 @@
 package com.cinkle.jdbcT;
 
-import javax.swing.plaf.IconUIResource;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -27,7 +26,7 @@ public class jdbcTest implements Runnable{
         int row;
         String first;
         String second;
-        public CellBean(int id,int side,int line,int row,String first,String second){
+        private CellBean(int id,int side,int line,int row,String first,String second){
             this.id=id;
             this.side=side;
             this.line=line;
@@ -76,7 +75,7 @@ public class jdbcTest implements Runnable{
             System.out.println("error when close");
         }
     }
-    public void changeBean() throws Exception{
+    private void changeBean() throws Exception{
         for(CellBean bean : list){
             if(!bean.first.contains("/")){
                 bean.first=bean.second;
@@ -100,7 +99,7 @@ public class jdbcTest implements Runnable{
     public HashSet<String> getSet(){
         return category;
     }
-    public void setList(){
+    private void setList(){
         String sql ="select * from branch";
         ResultSet rs=query(sql);
         try{
@@ -117,7 +116,7 @@ public class jdbcTest implements Runnable{
             System.out.println("error when set List");
         }
     }
-    public void setCategory(){
+    private void setCategory(){
         String sql="select * from total";
         ResultSet  rs=query(sql);
         try{
