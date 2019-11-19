@@ -1,22 +1,20 @@
 package com.cinkle.jdbcT;
 
+import java.io.FileInputStream;
 import java.sql.*;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
-import java.util.TreeSet;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.Properties;
+
 //单例模式
 public class jdbcTest implements Runnable{
     private Connection con;
     private Statement stmt;
-//    private ResultSet rs;
     private LinkedList<CellBean> list=new LinkedList<>();
 //    private HashMap<String,Integer> category=new HashMap<>();
     private HashSet<String> category = new HashSet<>();
+    private Properties properties = new Properties();
     static private jdbcTest jdbc;
 
     static class CellBean{
@@ -41,15 +39,17 @@ public class jdbcTest implements Runnable{
     public jdbcTest(){}
     public void init(){
         try{
+            properties.load(new FileInputStream("res/config.properties"));
+            String driver = properties.getProperty("driver");
+            String user = properties.getProperty("user");
+            String password = properties.getProperty("password");
+            String url = properties.getProperty("url");
             //加载驱动器，下面的代码为加载MySQL驱动器
-            Class.forName("com.mysql.cj.jdbc.Driver");
+            Class.forName(driver);
             //注册MySQL驱动器
             //DriverManager.registerDriver(new com.mysql.jdbc.Driver());
             //连接到数据库的URL
-            String url = "jdbc:mysql://localhost:3306/library?useUnicode=true&serverTimezone=UTC&useSSL=false";
-            String username="root";
-            String password="hoh473726";
-            con= DriverManager.getConnection(url,username,password);
+            con= DriverManager.getConnection(url,user,password);
             stmt=con.createStatement();
         }catch(Exception e){
             System.out.println("this is error");
@@ -137,11 +137,11 @@ public class jdbcTest implements Runnable{
 
         setCategory();
         jdbc=this;
+        System.out.println(category.size());
     }
 
     public static void main(String[] args) throws Exception{
         jdbcTest test = new jdbcTest();
         test.run();
-        test.changeBean();
     }
 }
