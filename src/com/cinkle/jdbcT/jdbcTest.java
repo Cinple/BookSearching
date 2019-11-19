@@ -1,22 +1,18 @@
 package com.cinkle.jdbcT;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.*;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.TreeSet;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.*;
 //单例模式
 public class jdbcTest implements Runnable{
     private Connection con;
     private Statement stmt;
-//    private ResultSet rs;
     private LinkedList<CellBean> list=new LinkedList<>();
 //    private HashMap<String,Integer> category=new HashMap<>();
     private HashSet<String> category = new HashSet<>();
+    private Properties proper = new Properties();
     static private jdbcTest jdbc;
 
     static class CellBean{
@@ -41,18 +37,27 @@ public class jdbcTest implements Runnable{
     public jdbcTest(){}
     public void init(){
         try{
+            proper.load(new FileInputStream("res/config.properties"));
             //加载驱动器，下面的代码为加载MySQL驱动器
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            //注册MySQL驱动器
-            //DriverManager.registerDriver(new com.mysql.jdbc.Driver());
-            //连接到数据库的URL
-            String url = "jdbc:mysql://localhost:3306/library?useUnicode=true&serverTimezone=UTC&useSSL=false";
-            String username="root";
-            String password="hoh473726";
-            con= DriverManager.getConnection(url,username,password);
+            String Driver = proper.getProperty("driver");
+            String url =proper.getProperty("url");
+            String user =proper.getProperty("user");
+            String password = proper.getProperty("password");
+            Class.forName(Driver);
+            con= DriverManager.getConnection(url,user,password);
+            if(con==null)
+                System.out.println("con is null");
             stmt=con.createStatement();
-        }catch(Exception e){
-            System.out.println("this is error");
+            if(stmt==null)
+                System.out.println("stmt is null");
+        }catch(FileNotFoundException e){
+            System.out.println("FileNotFound");
+        }catch(ClassNotFoundException e){
+            System.out.println("ClassNotFound");
+        }catch(SQLException e){
+            System.out.println("SQL");
+        }catch(IOException e){
+            System.out.println("load Error");
         }
     }
     public ResultSet query(String sql){
@@ -142,6 +147,5 @@ public class jdbcTest implements Runnable{
     public static void main(String[] args) throws Exception{
         jdbcTest test = new jdbcTest();
         test.run();
-        test.changeBean();
     }
 }

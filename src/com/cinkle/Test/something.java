@@ -60,7 +60,10 @@ public class something {
         }
     }
 //    程序入口
-    public static void main(String[] args) {
-        System.out.println("当前JVM字符集"+System.getProperty("file.encoding"));
+    public static void main(String[] args) throws IOException{
+        Properties properties = new Properties();
+        InputStream inputStream =new FileInputStream("res/config.properties");
+        properties.load(inputStream);
+        System.out.println(properties.getProperty("user"));
     }
 }

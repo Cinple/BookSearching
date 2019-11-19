@@ -6,7 +6,26 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="842f364a-6a4d-4886-b658-72c79829f3f0" name="Default Changelist" comment="" />
+    <list default="true" id="842f364a-6a4d-4886-b658-72c79829f3f0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JavaContain.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JavaContain.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/Test/something$RandomLocation.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/Test/something$RandomLocation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/Test/something.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/Test/something.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/httpT/VisitWeb.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/httpT/VisitWeb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/jdbcT/jdbcTest$CellBean.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/jdbcT/jdbcTest$CellBean.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/jdbcT/jdbcTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaContain/com/cinkle/jdbcT/jdbcTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/peng.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/u=2045272469,4116645377&amp;fm=26&amp;gp=0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/u=2163114822,1112549188&amp;fm=26&amp;gp=0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/u=2784975015,3764887032&amp;fm=26&amp;gp=0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/u=4212205264,2371506706&amp;fm=15&amp;gp=0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/u=557551014,1196863497&amp;fm=26&amp;gp=0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/u=737624608,171817596&amp;fm=15&amp;gp=0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/u=760999038,2293567258&amp;fm=15&amp;gp=0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/res/风.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cinkle/Test/something.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cinkle/Test/something.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/cinkle/jdbcT/jdbcTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cinkle/jdbcT/jdbcTest.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +43,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="addProperty" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1QlVZ4YwAtFp8S50BK0shENxsK8" />
@@ -33,10 +57,19 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\JavaContain\res" />
+      <recent name="E:\JavaContain\out\production\JavaContain\com" />
+      <recent name="E:\JavaContain\out\production\JavaContain" />
+      <recent name="E:\JavaContain\out" />
+      <recent name="E:\JavaContain\out\production" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -118,11 +151,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.UIT" />
         <item itemvalue="Application.something" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.LocationAlgrithm" />
         <item itemvalue="Application.jdbcTest" />
-        <item itemvalue="Application.UIT" />
       </list>
     </recent_temporary>
   </component>
@@ -151,7 +184,14 @@
       <option name="project" value="LOCAL" />
       <updated>1573979774330</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="尝试一下IDEA的VCS">
+      <created>1573980066033</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1573980066033</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -168,9 +208,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="尝试一下IDEA的VCS" />
     <MESSAGE value="尝试以下IDEA的VCS" />
-    <option name="LAST_COMMIT_MESSAGE" value="尝试以下IDEA的VCS" />
+    <MESSAGE value="尝试一下IDEA的VCS" />
+    <option name="LAST_COMMIT_MESSAGE" value="尝试一下IDEA的VCS" />
   </component>
   <component name="simpleUML.UMLToolWindowPlugin">
     <General>
