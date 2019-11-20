@@ -137,7 +137,6 @@ public class jdbcTest implements Runnable{
 
         setCategory();
         jdbc=this;
-        System.out.println(category.size());
     }
 
     public static void main(String[] args) throws Exception{
