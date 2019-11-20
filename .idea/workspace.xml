@@ -6,8 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b26dc7c6-dd3e-4599-9e2b-6bfdd9de9b85" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/com/cinkle/jdbcT/jdbcTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/cinkle/jdbcT/jdbcTest.java" afterDir="false" />
+    <list default="true" id="842f364a-6a4d-4886-b658-72c79829f3f0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
