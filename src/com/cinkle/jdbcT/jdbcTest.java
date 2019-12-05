@@ -1,4 +1,6 @@
 package com.cinkle.jdbcT;
+import	java.io.IOException;
+import	java.io.FileNotFoundException;
 
 import java.io.FileInputStream;
 import java.sql.*;
@@ -51,14 +53,22 @@ public class jdbcTest implements Runnable{
             //连接到数据库的URL
             con= DriverManager.getConnection(url,user,password);
             stmt=con.createStatement();
-        }catch(Exception e){
-            System.out.println("this is error");
+        }catch(FileNotFoundException e){
+            System.out.println("file this is error");
+        }catch(IOException e){
+            System.out.println("IO load");
+        }catch(ClassNotFoundException e){
+            System.out.println("Classnotfount");
+        }catch(SQLException e){
+            System.out.println(e.getMessage());
         }
     }
     public ResultSet query(String sql){
         ResultSet rs;
         try{
             rs=stmt.executeQuery(sql);
+            if(rs==null)
+                System.out.println("result is null");
             return rs;
         }catch(SQLException e){
             System.out.println("There was a SQLException when get result");
@@ -134,7 +144,7 @@ public class jdbcTest implements Runnable{
     public void run(){
         init();
         setList();
-
+        System.out.println(list.size());
         setCategory();
         jdbc=this;
     }
